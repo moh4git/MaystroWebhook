@@ -1,6 +1,6 @@
 <?php
 
-namespace Moh4git\MaystroWebhook;
+namespace MaystroWebhook;
 
 use Illuminate\Http\Request;
 /**

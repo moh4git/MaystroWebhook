@@ -1,6 +1,6 @@
 <?php
 
-namespace Moh4git\MaystroWebhook\Facades;
+namespace MaystroWebhook\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
