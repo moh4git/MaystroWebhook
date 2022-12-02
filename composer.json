@@ -2,6 +2,7 @@
     "name": "moh4git/maystro-webhook",
     "description": "Maystro Webhook",
     "type": "library",
+    "license": "MIT",
     "authors": [{
         "name": "Mohamed El-amine",
         "email": "moh4shine@gmail.com"
