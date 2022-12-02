@@ -14,7 +14,7 @@
         }
     },
     "scripts": {
-        "post-install-cmd": [
+        "post-autoload-dump": [
             "php artisan webhook:install"
         ]
     },
