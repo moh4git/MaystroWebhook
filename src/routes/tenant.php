@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
@@ -15,14 +16,15 @@ use Stancl\Tenancy\Middleware\ScopeSessions;
 | contains the "web" middleware group. Now create something great!
 |
  */
-Route::middleware([
-	'web',
-	'changeConfigVars',
-	'logs-out-banned-user',
-	InitializeTenancyByDomain::class,
-	PreventAccessFromCentralDomains::class,
-	ScopeSessions::class
-])->group(function ()
+Route::withoutMiddleware([VerifyCsrfToken::class])
+	->middleware([
+		'web',
+		'changeConfigVars',
+		'logs-out-banned-user',
+		InitializeTenancyByDomain::class,
+		PreventAccessFromCentralDomains::class,
+		ScopeSessions::class
+	])->group(function ()
 {
 	Route::group(['namespace' => 'App\Http\Controllers\MaystroDelivery'], function ()
 	{
