@@ -1,0 +1,23 @@
+{
+    "name": "moh4git/MaystroWebhook",
+    "description": "Maystro Webhook",
+    "type": "library",
+    "authors": [{
+        "name": "Mohamed El-amine",
+        "email": "moh4shine@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "MaystroWebhook\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MaystroWebhook\\MaystroWebhookServiceProvider"
+            ]
+        }
+    },
+    "require": {}
+}
