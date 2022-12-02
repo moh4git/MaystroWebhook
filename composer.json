@@ -13,6 +13,11 @@
             "MaystroWebhook\\": "src/"
         }
     },
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan webhook:install"
+        ]
+    },
     "extra": {
         "laravel": {
             "providers": [
