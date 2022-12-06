@@ -16,18 +16,7 @@ use Stancl\Tenancy\Middleware\ScopeSessions;
 | contains the "web" middleware group. Now create something great!
 |
  */
-Route::withoutMiddleware([VerifyCsrfToken::class])
-	->middleware([
-		'web',
-		'changeConfigVars',
-		'logs-out-banned-user',
-		InitializeTenancyByDomain::class,
-		PreventAccessFromCentralDomains::class,
-		ScopeSessions::class
-	])->group(function ()
+Route::group(['namespace' => 'App\Http\Controllers\MaystroDelivery'], function ()
 {
-	Route::group(['namespace' => 'App\Http\Controllers\MaystroDelivery'], function ()
-	{
-		Route::post('maystro/webhook/endpoint', 'MaystroDeliveryController@endpoint');
-	});
+	Route::post('maystro/webhook/endpoint', 'MaystroDeliveryController@endpoint');
 });
