@@ -2,9 +2,6 @@
 
 use App\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
-use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
-use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
-use Stancl\Tenancy\Middleware\ScopeSessions;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +13,10 @@ use Stancl\Tenancy\Middleware\ScopeSessions;
 | contains the "web" middleware group. Now create something great!
 |
  */
-Route::group(['namespace' => 'App\Http\Controllers\MaystroDelivery'], function ()
+Route::withoutMiddleware([VerifyCsrfToken::class])->group(function ()
 {
-	Route::post('maystro/webhook/endpoint', 'MaystroDeliveryController@endpoint');
+	Route::group(['namespace' => 'App\Http\Controllers\MaystroDelivery'], function ()
+	{
+		Route::post('maystro/webhook/endpoint', 'MaystroDeliveryController@endpoint');
+	});
 });
