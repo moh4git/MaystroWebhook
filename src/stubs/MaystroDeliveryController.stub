@@ -33,5 +33,6 @@ class MaystroDeliveryController extends Controller
     public function responseData()
     {
         \Log::debug(['log_type' => 'test1', 'data' => $this->response_data]);
+        return response('OK', 200);
     }
 }
